@@ -1,0 +1,90 @@
+//温度转换
+#include<stdio.h>
+int main()
+{
+    float t;
+    scanf("%f",&t);
+    float T;
+    T=(t-32)*5/9;
+    printf("%.2f",T);
+    return 0;
+}
+数列分段
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a=0;
+    int c=0;
+    int b=0;
+    for(int i=1;i<=n;i++)
+    {
+        scanf("%d",&a);
+        if(b!=a)
+            c++;
+        b=a;
+    }
+    printf("%d\n",c);
+    return 0;
+}
+
+    
+    
+    
+四则运算
+#include<stdio.h>
+int main()
+{
+    char a;
+    int b,c,d;
+    scanf("%d%c%d",&b,&a,&c);
+    if(a=='+')
+    {
+        d=b+c;
+        printf("%d%c%d=%d\n",b,a,c,d);
+    }
+    if(a=='-')
+    {
+        d=b-c;
+        printf("%d%c%d=%d\n",b,a,c,d);
+    }
+    if(a=='/')
+    {
+        d=b/c;
+        printf("%d%c%d=%d\n",b,a,c,d);
+    }
+    if(a=='%')
+    {
+        d=b%c;
+        printf("%d%c%d=%d\n",b,a,c,d);
+    }
+    return 0;
+}
+    
+    
+    
+  车牌限行
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d=0;
+    scanf("%d%d%d",&a,&b,&c);
+    d=c%10;
+
+    if(b<200||(a==6||a==7))
+    {
+        printf("%d no\n",d);
+    }
+    else if(b>=200&&b<400&&((a==1&&(d==1||d==6))||(a==2&&(d==2||d==7))||(a==3&&(d==3||d==8))||(a==4&&(d==4||d==9))||(a==5&&(d==5||d==0))))
+    {
+        printf("%d yes\n",d);
+    }
+     else if(b>=400&&(((a==1||a==3||a==5)&&(d==1||d==3||d==5||d==7||d==9))||((a==2||a==4)&&(d==0||d==2||d==4||d==6||d==8))))
+    {
+        printf("%d yes\n",d);
+    }
+    else
+        printf("%d no\n",d);
+    return 0;
+}
